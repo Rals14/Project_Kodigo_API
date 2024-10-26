@@ -1,0 +1,200 @@
+#Container-welcome {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    padding: 80px 20px;
+    width: 100%;
+    height: 100%;
+    background-image: url(../../img/background-main.webp);
+    background-size: cover;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+
+
+#Container-section {
+    flex: 1;
+    max-width: 45%; 
+    text-align: left;
+}
+
+#Container-section h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:900;
+    margin: 0;
+}
+
+#Container-section h1 span {
+    font-weight: 800;
+    color: white;
+    font-size: 60px;
+}
+
+#Container-section p {
+    width: 80%;
+    font-size: 20px;
+    margin: 20px 0;
+    color: #d3d3d3;
+    text-align:left;
+}
+
+/* CONFIG DIV IMG*/
+
+#Container-welcome #Container-img {
+    flex: 1;
+    max-width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    
+
+}
+
+#Container-welcome #Container-img #Container-img-1 {
+    width: 48%;
+    max-width: 280px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+
+#Container-welcome #Container-img #Container-img-1 #img-1 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: 100%;
+    flex-grow: 0;
+}
+
+#Container-welcome #Container-img #Container-img-2 {
+    width: 48%;
+    max-width: 280px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#Container-welcome #Container-img #Container-img-2 #img-2 { 
+
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 25px 25px 25px 25px;
+    max-width: 100%;
+    flex-grow: 0;
+}
+
+#Container-welcome #Container-img #Container-img-3 {
+    width: 580px;
+    flex-grow: 0;
+}
+
+#Container-welcome #Container-img #Container-img-3 #img-3 { 
+
+    width: 100%;
+    flex-grow:0;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 25px 25px 25px 25px;
+    
+}
+
+/* Media Query for TABLET */
+
+@media (max-width: 1024px) {
+
+    #Container-welcome {
+        flex-direction: column;
+        padding: 60px 15px;
+    }
+
+    #Container-section {
+
+        max-width: 80%;
+        text-align: center;
+    }
+
+    #Container-section h1 {
+        font-size: 40px;
+    }
+
+    #Container-section h1 span {
+
+        font-size: 50px;
+    }
+
+    #Container-section p {
+
+        font-size: 18px;
+        width: 90%;
+        text-align: center;
+    }
+
+    #Container-welcome #Container-img {
+        max-width: 80%;
+        gap: 10px;
+    }
+
+    #Container-welcome #Container-img #Container-img-1, #Container-welcome #Container-img #Container-img-2 {
+        max-width: 45%;
+    }
+
+    #Container-welcome #Container-img #Container-img-3 {
+        max-width: 100%;
+    }
+}
+
+/* Media Query para mobiles */
+
+@media (max-width: 600px) {
+
+
+    #Container-welcome {
+
+        flex-direction: column;
+        padding: 40px 10px;
+        text-align: center;
+    }
+
+    #Container-section {
+        max-width: 90%;
+        text-align: center;
+
+    }
+
+    #Container-section h1 {
+        font-size: 32px;
+    }
+
+    #Container-section h1 span {
+        font-size: 40px;
+    }
+
+    #Container-section p {
+        font-size: 16px;
+        width: 100%;
+    }
+
+    #Container-welcome #Container-img {
+        max-width: 100%;
+        gap: 8px;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    #Container-welcome #Container-img #Container-img-1, #Container-welcome #Container-img #Container-img-2, #Container-welcome #Container-img #Container-img-3 {
+        width: 90%;
+        max-width: 100%;
+    }
+
+    #Container-welcome #Container-img #Container-img-1 #img-1, #Container-welcome #Container-img #Container-img-2 #img-2, #Container-welcome #Container-img #Container-img-3 #img-3 {
+        height: auto;
+        border-radius: 15px;
+    }
+}
