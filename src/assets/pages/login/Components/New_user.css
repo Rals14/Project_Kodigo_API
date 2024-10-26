@@ -1,5 +1,5 @@
 
-:root {
+.Container {
 
     /*POSITION OF ELEMENT*/
 
@@ -25,7 +25,7 @@
     background-color: white;
     text-align: center;
     width: 35vw;
-    height: 60vh;
+    height: 75vh;
     padding: 35px;
     border-radius: 15px;
 }
@@ -99,17 +99,20 @@
 
 @media only screen and (max-width: 1024px) {
 
-    :root {
+
+    #Container_New_User {
+        width: 50vw; 
+        height: 65vh; 
+        padding: 25px;
         justify-content: center;
         align-items: center;
         padding-right: 5ch;
         background-repeat: no-repeat;
     }
 
-    #Container_New_User {
-        width: 50vw; 
-        height: 65vh; 
-        padding: 25px;
+    .Container {
+      justify-content:space-around ;
+      padding-left: 10px;
     }
 
     #img_logo {
@@ -134,18 +137,16 @@
 
 @media only screen and (max-width: 600px) {
 
-    :root {
-        justify-content: center;
-        align-items: center;
-        padding-right: 0;
-        background-repeat: no-repeat;
-    }
 
     #Container_New_User {
         width: 90vw; 
         height: auto;
         padding: 25px;
         border-radius: 10px;
+        justify-content: center;
+        align-items: center;
+        padding-right: 0;
+        background-repeat: no-repeat;
     }
 
     #img_logo {
@@ -162,6 +163,15 @@
         flex-direction: column;
         align-items: center;
         font-size: 0.7rem;
+    }
+
+    .Container {
+      justify-content:space-around ;
+      padding-left: 40px;
+    }
+
+    #Container_New_User  #Register {
+      width: 90%;
     }
 
     #container #Container-config a {
