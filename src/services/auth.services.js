@@ -15,6 +15,7 @@ export const registerUser = async (user) => {
     return response.json();
 }
 
+
 // Login a user
 export const loginUser = async (user) => {
     const response = await fetch(`${BASEurl}/api/auth/login`, {
@@ -27,8 +28,11 @@ export const loginUser = async (user) => {
             "password": user.password
         })
     });
+
+    
     return response.json();
 }
+
 
 // Validate a token
 export const validateToken = async (token) => {
