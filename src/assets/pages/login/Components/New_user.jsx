@@ -15,7 +15,7 @@ export const New_user = () => {
       
 
   return (
-    <div>
+    <div className='Container'>
       <form id='Container_New_User'>
 
       <img id='img_logo' src= {logo} alt='Kodigo_logo'/>

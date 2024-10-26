@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body { 
+
+    overflow-x: hidden;
+}
+
+#Container { 
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px 40px;
+    gap: 10px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.263), rgba(255, 255, 255, 0.381)), url(../../img/background-main.webp);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+/* IMG LOGO */
+
+#Container-logo {
+    width: 40%;
+    display: flex;
+    justify-content:start;
+}
+
+#logo {
+    width: 150px;
+}
+
+/*CONFIG FOR NAVBAR*/
+
+#Container-tags {
+    width: 40%;
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+
+#Container-tags ul {
+    
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+#Container-tags a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+
+}
+
+/*BUTTON FOR CALL US*/
+
+#Call-us { 
+    
+    background-color: rgba(255, 255, 255, 0.227);
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#Call-us:hover {
+    background-color: gray;
+} 
+
+
+/* STYLE FOR TABLET */
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    #Container {
+        padding: 15px 30px;
+        gap: 15px;
+    }
+
+    #Container-logo {
+        width: 30%;
+    }
+
+    #Container-tags {
+        width: 70%;
+        gap: 15px;
+    }
+
+    #logo {
+        width: 130px;
+    }
+
+    #Container-tags a {
+        font-size: 15px;
+    }
+
+    #Call-us {
+        padding: 10px 18px;
+        font-size: 15px;
+        text-align: center;
+    }
+}
+
+/* STYLE FOR MOBILES */
+
+@media (max-width: 600px) {
+    #Container {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        text-align: center;
+    }
+
+    #Container-logo {
+        width: 100%;
+        justify-content: center;
+    }
+
+    #logo {
+        width: 120px;
+    }
+
+    #Container-tags {
+        width: 100%;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    #Container-tags ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #Container-tags a {
+        font-size: 14px;
+    }
+
+    #Call-us {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
