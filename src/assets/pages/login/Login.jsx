@@ -1,22 +1,30 @@
-import React from 'react'
 import "./Login.css"
 import logo from "../../img/kodigo_logo.png"
 import { useForm } from "react-hook-form"
 import { loginUser } from '../../../services/auth.services'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+
+
 
 
 
 export const Login = () => {
+  const navigate = useNavigate();
 
   const { register, handleSubmit } = useForm();
 
 
   const onSubmitForm = async (data) => {
 
-    const token = await loginUser(data);
+
+
+    const response = await loginUser(data);
+    console.log(response.token);
+    localStorage.setItem('token',response.token);
+    alert(`Bienvenido al sistema ${data.username}`)
+    navigate("/Create")
     console.log(data)
-    console.log(token);
+    
 
 
   }
@@ -38,16 +46,16 @@ export const Login = () => {
         </div>
 
 
-      {/* IMPUT DATA AND BTN*/}
-     
-        
-        <input type='text' id='Email_User' placeholder='Nombre de usuario'  {...register("username")}/>
-    
+        {/* IMPUT DATA AND BTN*/}
+
+
+        <input type='text' id='Email_User' placeholder='Nombre de usuario'  {...register("username")} />
+
         <input type='password' id='Password_User' placeholder='Contraseña' {...register("password")} />
 
-        <button type='submit' id='acceso'>Acceder</button>
+         <button type='submit' id='acceso'>Acceder</button>
 
-        <Link to="/register"><button type='submit' id='New_user'>Nuevo usuario</button></Link>
+        <Link to="/register"><button  id='New_user'>Nuevo usuario</button></Link>
 
 
         {/*CONFIG USER*/}

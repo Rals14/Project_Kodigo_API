@@ -22,6 +22,7 @@ export const New_user = () => {
   };
 
    let respuesta= await registerUser(user);
+   alert("Usuario Creado Correctamente")
    console.log(respuesta);
 }
   

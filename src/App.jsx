@@ -6,6 +6,8 @@ import { HashRouter, Route, Routes } from 'react-router-dom';
 import { Header } from './assets/pages/header/Header'
 import { Welcome } from './assets/pages/welcome/Welcome'
 
+import { CreateBootcamp } from './assets/pages/Bootcamps/Components/CreateBootcamp';
+
 function App() {
 
   return (
@@ -16,9 +18,9 @@ function App() {
           {/* <New_user/> */}
           <Route path='/register' element={<New_user/>} />
           <Route path='/' element={<Login/>} />
+          <Route path='/Create' element={<CreateBootcamp/>}/>
         </Routes>
       </HashRouter>
-
     </>
   )
 }
