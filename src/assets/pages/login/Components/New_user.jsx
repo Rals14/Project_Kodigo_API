@@ -30,8 +30,10 @@ export const New_user = () => {
    
 
   return (
+
     <div>
       <form id='Container_New_User' onSubmit={handleSubmit(onSubmitForm)}>
+
 
       <img id='img_logo' src= {logo} alt='Kodigo_logo'/>
 

@@ -22,9 +22,11 @@ export const Login = () => {
 
 
   return (
+
     <div>
     
       <form id='container' onSubmit={handleSubmit(onSubmitForm)}>
+
 
       <div> 
 
@@ -35,7 +37,7 @@ export const Login = () => {
 
 
       {/* IMPUT DATA AND BTN*/}
-      
+     
         
         <input type='text' id='Email_User' placeholder='Nombre de usuario'  {...register("username")}/>
     
