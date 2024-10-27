@@ -24,9 +24,11 @@ export const Login = () => {
 
 
   return (
+
     <div>
 
       <form id='container' onSubmit={handleSubmit(onSubmitForm)}>
+
 
         <div>
 
@@ -36,11 +38,11 @@ export const Login = () => {
         </div>
 
 
-        {/* IMPUT DATA AND BTN*/}
-
-
-        <input type='text' id='Email_User' placeholder='Nombre de usuario'  {...register("username")} />
-
+      {/* IMPUT DATA AND BTN*/}
+     
+        
+        <input type='text' id='Email_User' placeholder='Nombre de usuario'  {...register("username")}/>
+    
         <input type='password' id='Password_User' placeholder='Contraseña' {...register("password")} />
 
         <button type='submit' id='acceso'>Acceder</button>
