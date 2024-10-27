@@ -2,18 +2,20 @@
 import { createBootcamp } from "../../../../services/bootcamp.services";
 import { useForm } from "react-hook-form";
 import  { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 export const CreateBootcamp = () => {
   const { register, handleSubmit, setValue, getValues } = useForm();
   const [technologies, setTechnologies] = useState([]);
-  /*Function for arrays*/
+  const navigate = useNavigate();
+
 
   const handleAddTechnology = () => {
-    const newTechnology = getValues('technologies').trim(); // Obtiene y limpia el valor del input
+    const newTechnology = getValues('technologies').trim(); 
 
     if (newTechnology) {
-      setTechnologies([...technologies, newTechnology]); // Agrega el valor al array
-      setValue('technologies', ''); // Resetea el input
+      setTechnologies([...technologies, newTechnology]); 
+      setValue('technologies', '');
     }
   };
 
@@ -29,14 +31,14 @@ export const CreateBootcamp = () => {
 
     const bootcampData = {
       ...data,
-      technologies, // Añade el array de tecnologías
+      technologies, 
     };
-    // const arrayDeStrings = data.technologies.split(',').map(item => item.trim());
    const respuesta =  await createBootcamp(token, bootcampData)
     console.log(respuesta);
+    alert(respuesta.message);
+    navigate('/bootcamps')
     
-
-
+    
   }
 
 

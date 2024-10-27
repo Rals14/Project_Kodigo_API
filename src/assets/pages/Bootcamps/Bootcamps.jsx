@@ -1,7 +1,8 @@
-import React from 'react'
+import { GetBootcamps } from "./Components/GetBootcamps"
+
 
 export const Bootcamps = () => {
   return (
-    <div>Bootcamps</div>
+    <GetBootcamps/>
   )
 }

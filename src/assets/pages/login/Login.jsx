@@ -22,10 +22,9 @@ export const Login = () => {
     console.log(response.token);
     localStorage.setItem('token',response.token);
     alert(`Bienvenido al sistema ${data.username}`)
-    navigate("/Create")
+    navigate("/bootcamps")
     console.log(data)
-    
-
+  
 
   }
 
