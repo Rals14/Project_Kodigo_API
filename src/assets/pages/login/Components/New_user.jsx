@@ -22,6 +22,7 @@ export const New_user = () => {
   };
 
    let respuesta= await registerUser(user);
+   alert("Usuario Creado Correctamente")
    console.log(respuesta);
 }
   
@@ -31,7 +32,7 @@ export const New_user = () => {
 
   return (
 
-    <div>
+    <div className='Container'>
       <form id='Container_New_User' onSubmit={handleSubmit(onSubmitForm)}>
 
 
