@@ -22,7 +22,7 @@ export const Login = () => {
     console.log(response.token);
     localStorage.setItem('token',response.token);
     alert(`Bienvenido al sistema ${data.username}`)
-    navigate("/bootcamps")
+    navigate("/home")
     console.log(data)
   
 
@@ -32,7 +32,7 @@ export const Login = () => {
 
   return (
 
-    <div>
+    <div className="login-container">
 
       <form id='container' onSubmit={handleSubmit(onSubmitForm)}>
 

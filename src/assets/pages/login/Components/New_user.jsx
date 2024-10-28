@@ -32,7 +32,7 @@ export const New_user = () => {
 
   return (
 
-    <div>
+    <div className='Container'>
       <form id='Container_New_User' onSubmit={handleSubmit(onSubmitForm)}>
 
 
