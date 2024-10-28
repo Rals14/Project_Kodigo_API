@@ -1,6 +1,9 @@
 import React from 'react'
 import { getAllBootcamps, deleteBootcamp } from "../../../../services/bootcamp.services";
 import { useState, useEffect } from 'react';
+import "./GetBotcamps.css";
+import logo_card from "../../../img/logo-cards.webp"
+
 
 
 export const GetBootcamps = () => {
@@ -27,21 +30,44 @@ export const GetBootcamps = () => {
     }, []);
     
   return (
-    <div>
-        <h2>Bootcamps</h2>
-        <div>
-            <div className="container">
+
+    /*Pagina estatica:*/
+
+    <div className='Container-main'>
+        <h1>Elige tu Bootcamps</h1>
+        <span>¡El futuro te llama!</span>
+        <p id='p-main'>Reserva tu cupo en nuestros bootcamps y comienza tu carrera tecnológica hoy mismo</p>
+        
+        
+        
+        <section id='section-container'>
+
+            <div className="container-bootcamps">
+            
                 {bootcamps.map(bootcamp => (
+
                     <div className="bootcamp" key={bootcamp.id}>
+
+                        <img id="logo-cards" src={logo_card} alt="Logo Kodigo"/>
+
                         <h3>{bootcamp.name}</h3>
-                        <p>{bootcamp.description}</p>
+                        <p id='description'>{bootcamp.description}</p>
                         <h4>Tecnologías:</h4>
+
                         <ul>
                             {bootcamp.technologies.map((tech, index) => (
                                 <li key={index}>{tech}</li>
                             ))}
                         </ul>
-                        <p>Activo: {bootcamp.active.toString()}</p>
+
+                       <p id='status-p'>
+
+                      <span id="status">Activo:</span>
+                             <span className={bootcamp.active ? "status-true" : "status-false"}>
+                             {bootcamp.active.toString()}
+                              </span>
+                       </p>
+                       
                         <div>
                             <button>Editar</button>
                             <button onClick={()=>{deactiveBootcamp(bootcamp.id)}}>Eliminar</button>
@@ -49,7 +75,7 @@ export const GetBootcamps = () => {
                     </div>
                 ))}
             </div>
-        </div>
+        </section>
 
     </div>
   )
