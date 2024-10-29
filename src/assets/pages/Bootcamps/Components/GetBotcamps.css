@@ -1,0 +1,219 @@
+
+/* Container main */
+
+.Container-main {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    align-content: center;
+    background-image: url("../../../img/bg-blue-shade-1.webp");
+    font-family: Arial, Helvetica, sans-serif;
+    background-size: cover;
+}
+
+.Container-main #section-container .container-bootcamps .bootcamp #logo-cards {
+    width: 20%;
+
+}
+
+/* TAG-MAIN */
+
+.Container-main h1 {
+    color: white;
+    padding: 30px 10px 15px 0px;
+    margin-left: 20px;
+    
+}
+
+.Container-main span {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 20px;
+}   
+
+
+.Container-main #p-main { 
+    color: white;
+    font-size: 1.1rem;
+    margin-left: 20px;
+}
+
+/* CARD BOOTCAMPS CONTAINER*/
+
+#section-container .container-bootcamps { 
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr) );
+    gap: 16px;
+    padding: 20px;
+
+    
+}
+
+/*CARDS*/
+
+.container-bootcamps .bootcamp { 
+
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* OJO */
+    padding: 20px;
+    transition: transfor 0.3s;
+}
+
+.container-bootcamps .bootcamp:hover {
+    transform: scale(1.05);
+  }
+
+  .container-bootcamps .bootcamp h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+  }
+
+  .container-bootcamps .bootcamp #description {
+    margin-top: 10px;
+    padding: 0px 0px 10px 0px;
+    height: 13vh;
+    max-height: 20vh;
+  }
+
+  .container-bootcamps .bootcamp h4 {
+    font-weight: 800;
+    
+  }
+  
+  .container-bootcamps .bootcamp ul {
+    padding-left: 20px;    
+  }
+
+
+  
+  .container-bootcamps .bootcamp button {
+    width: 40%;
+    background-color: #47077a;
+    color: white;
+    font-size: 1rem;
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+    margin-right: 8px;
+    
+  }
+
+  .container-bootcamps .bootcamp button:hover {
+    background-color: #270345;
+  }
+
+  .container-bootcamps .bootcamp #status {
+    font-weight: 800;
+    color: black;
+    font-size: medium;
+  }
+
+  .container-bootcamps .bootcamp #status-p {
+    margin-top: 10px;
+    padding: 0 0 10px 0;
+  } 
+
+  .container-bootcamps .bootcamp .status-true {
+    color: white;
+    font-weight: bold;
+    background-color: green;
+    border-radius: 2px;
+    padding: 5px;
+}
+
+.container-bootcamps .bootcamp .status-false {
+    color: white;
+    font-weight: bold;
+    background-color: red;
+    border-radius: 2px;
+    padding: 5px;
+}
+
+  /*media querys for tablets*/
+
+  @media (max-width: 1024px) {
+
+    .Container-main {
+        align-items: center;
+        padding: 20px;
+    }
+
+    #section-container .container-bootcamps {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    }
+
+    .container-bootcamps .bootcamp {
+
+        padding: 15px; 
+        
+    }
+
+    .container-bootcamps .bootcamp h3 {
+        font-size: 1.3rem;
+    }
+
+    .container-bootcamps .bootcamp button {
+        width: 45%;
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
+
+/* MEDIA QUERYS FOR PHONES */
+
+@media (max-width: 600px) {
+
+    .Container-main h1 {
+        font-size: 1.5rem;
+        padding: 20px 0 10px 0;
+        margin-left: 10px;
+    }
+
+    .Container-main span {
+        font-size: 1rem;
+        margin-left: 10px;
+    }
+
+    .Container-main #p-main {
+      font-size: 1rem;
+        margin-left: 10px;
+    }
+
+    #section-container .container-bootcamps {
+        grid-template-columns: 1fr; 
+        gap: 12px;
+        padding: 10px;
+    }
+
+    .container-bootcamps .bootcamp {
+        padding: 10px;
+    }
+
+    .container-bootcamps .bootcamp h3 {
+
+        font-size: 1.2rem;
+    }
+
+    .container-bootcamps .bootcamp #description {
+        font-size: 0.9rem;
+        height: auto;
+        max-height: 15vh;
+
+    }
+
+    .container-bootcamps .bootcamp button {
+        width: 100%;
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    .container-bootcamps .bootcamp #status {
+        font-size: 0.9rem;
+    }
+}
+  
