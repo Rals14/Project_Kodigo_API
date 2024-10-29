@@ -3,12 +3,14 @@ import { getAllBootcamps, deleteBootcamp } from "../../../../services/bootcamp.s
 import { useState, useEffect } from 'react';
 import "./GetBotcamps.css";
 import logo_card from "../../../img/logo-cards.webp"
+import { useNavigate } from 'react-router-dom';
 
 
 
 export const GetBootcamps = () => {
     const token = localStorage.getItem('token');
     const [bootcamps, setBootcamps] = useState([]);
+    const navigate = useNavigate();
 
     const fetchBootcamps = async () => {
         const response = await getAllBootcamps(token);
@@ -23,60 +25,69 @@ export const GetBootcamps = () => {
         fetchBootcamps();
 
     }
-    
-    
-    useEffect(() => {   
+
+    const fillFormBootcamp = (bootcamp) => {
+        localStorage.setItem('id', bootcamp.id);
+        localStorage.setItem('name', bootcamp.name);
+        localStorage.setItem('description', bootcamp.description);
+        localStorage.setItem('technologies', bootcamp.technologies);
+
+        navigate('/edit');
+    }
+
+
+    useEffect(() => {
         fetchBootcamps();
     }, []);
-    
-  return (
 
-    /*Pagina estatica:*/
+    return (
 
-    <div className='Container-main'>
-        <h1>Elige tu Bootcamps</h1>
-        <span>¡El futuro te llama!</span>
-        <p id='p-main'>Reserva tu cupo en nuestros bootcamps y comienza tu carrera tecnológica hoy mismo</p>
-        
-        
-        
-        <section id='section-container'>
+        /*Pagina estatica:*/
 
-            <div className="container-bootcamps">
-            
-                {bootcamps.map(bootcamp => (
+        <div className='Container-main'>
+            <h1>Elige tu Bootcamps</h1>
+            <span>¡El futuro te llama!</span>
+            <p id='p-main'>Reserva tu cupo en nuestros bootcamps y comienza tu carrera tecnológica hoy mismo</p>
 
-                    <div className="bootcamp" key={bootcamp.id}>
 
-                        <img id="logo-cards" src={logo_card} alt="Logo Kodigo"/>
 
-                        <h3>{bootcamp.name}</h3>
-                        <p id='description'>{bootcamp.description}</p>
-                        <h4>Tecnologías:</h4>
+            <section id='section-container'>
 
-                        <ul>
-                            {bootcamp.technologies.map((tech, index) => (
-                                <li key={index}>{tech}</li>
-                            ))}
-                        </ul>
+                <div className="container-bootcamps">
 
-                       <p id='status-p'>
+                    {bootcamps.map(bootcamp => (
 
-                      <span id="status">Activo:</span>
-                             <span className={bootcamp.active ? "status-true" : "status-false"}>
-                             {bootcamp.active.toString()}
-                              </span>
-                       </p>
-                       
-                        <div>
-                            <button>Editar</button>
-                            <button onClick={()=>{deactiveBootcamp(bootcamp.id)}}>Eliminar</button>
+                        <div className="bootcamp" key={bootcamp.id}>
+
+                            <img id="logo-cards" src={logo_card} alt="Logo Kodigo" />
+
+                            <h3>{bootcamp.name}</h3>
+                            <p id='description'>{bootcamp.description}</p>
+                            <h4>Tecnologías:</h4>
+
+                            <ul>
+                                {bootcamp.technologies.map((tech, index) => (
+                                    <li key={index}>{tech}</li>
+                                ))}
+                            </ul>
+
+                            <p id='status-p'>
+
+                                <span id="status">Activo:</span>
+                                <span className={bootcamp.active ? "status-true" : "status-false"}>
+                                    {bootcamp.active.toString()}
+                                </span>
+                            </p>
+
+                            <div>
+                                <button onClick={() => { fillFormBootcamp(bootcamp) }}>Editar</button>
+                                <button onClick={() => { deactiveBootcamp(bootcamp.id) }}>Eliminar</button>
+                            </div>
                         </div>
-                    </div>
-                ))}
-            </div>
-        </section>
+                    ))}
+                </div>
+            </section>
 
-    </div>
-  )
+        </div>
+    )
 }
