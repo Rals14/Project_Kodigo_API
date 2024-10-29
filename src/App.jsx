@@ -7,6 +7,8 @@ import { Welcome } from './assets/pages/welcome/Welcome'
 import { CreateBootcamp } from './assets/pages/Bootcamps/Components/CreateBootcamp';
 import { Bootcamps } from './assets/pages/Bootcamps/Bootcamps';
 import { Home } from './assets/pages/Home-principal/Home';
+import { EditBootcamp } from './assets/pages/Bootcamps/Components/EditBootcamp';
+
 
 function App() {
 

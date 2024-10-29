@@ -2,6 +2,8 @@ import { updateBootcamp } from "../../../../services/bootcamp.services";
 import { useForm } from "react-hook-form";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import "./EdiBootcamp.css"
+import Footer from "../../Footer/Footer";
 
 export const EditBootcamp = (bootcamp) => {
     const { register, handleSubmit, setValue, getValues } = useForm();
@@ -43,7 +45,7 @@ export const EditBootcamp = (bootcamp) => {
         const respuesta = await updateBootcamp(token, bootcampData)
         console.log(respuesta);
         alert(respuesta.message);
-        navigate('/bootcamps')
+        navigate('/home')
 
 
     }
@@ -52,28 +54,44 @@ export const EditBootcamp = (bootcamp) => {
 
 
     return (
-        <div>
-            <form onSubmit={handleSubmit(onSubmitForm)}>
-            <input type='hidden'  {...register("id")} />
-                <input type='text' placeholder='Ingresa el nombre del bootcamp' {...register("name")} />
+        <div>       
+        <div className="Container-edit">
 
-                <input type='text' placeholder='Ingresa una descripción' {...register("description")} />
+        <h1>BIENVENIDO AL SISTEMA DE EDICIÓN</h1>
+        <h3>Modifica los datos que sean de tu interes:</h3>
+
+            <form id="form-edit" onSubmit={handleSubmit(onSubmitForm)}>
+            <input type='hidden'  {...register("id")} />
+
+                <label>Nombre del Bootcamps:</label>
+                <input className="inputs-form" type='text' placeholder='Ingresa el nombre del bootcamp' {...register("name")} />
+
+
+                <label>Descripción del Bootcamps:</label>
+                <input className="inputs-form" id="description" type='text' placeholder='Ingresa una descripción' {...register("description")} />
 
                 <div>
-                    <input type='text'{...register("technologies")} placeholder='Ingresa las tecnologias(separalos por comas)' />
-                    <button type="button" onClick={handleAddTechnology}>Agregar</button>
+                    <label>Tecnologías, agrega una a la vez: <br/></label>
 
-                    <ul>
+                    <input className="inputs-form" id="input-tag" type='text'{...register("technologies")} placeholder='Ingresa las tecnologias una a la vez' />
+                    <button id="agregar" type="button" onClick={handleAddTechnology}>Agregar</button>
+
+                    <ul id="ul-edit">
                         {technologies.map((tech, index) => (
                             <li key={index}>{tech}</li>
                         ))}
                     </ul>
                 </div>
 
-                <button type='submit'>Guardar</button>
-
+                <button id="guardar" type='submit'>Guardar</button>
 
             </form>
         </div>
+
+        <Footer/>
+
+        </div>
+ 
+        
     )
 }
