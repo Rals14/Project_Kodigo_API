@@ -19,11 +19,11 @@ export const Header = () => {
 
         <ul>
 
-        <li><a href="#">Bootcamps</a></li>
-        <li><a href="#">AIC</a></li>
-        <li><a href="#">Alianzas</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Sign In</a></li>
+        <li><a href="#/home">Bootcamps</a></li>
+        <li><a href="#/home">AIC</a></li>
+        <li><a href="#/home">Alianzas</a></li>
+        <li><a href="#/home">Blog</a></li>
+        <li><a href="#/home"> Grupo 3 </a></li>
 
         </ul>
 

@@ -15,9 +15,8 @@ body {
     align-items: center;
     padding: 20px 40px;
     gap: 10px;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.263), rgba(255, 255, 255, 0.381)), url(../../img/background-main.webp);
-    background-size: cover;
-    background-position: center;
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.381)), url(../../img/background-main.webp);
+    background-size: cover; 
     width: 100%;
     font-family: Arial, Helvetica, sans-serif;
   
