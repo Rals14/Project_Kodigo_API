@@ -25,7 +25,7 @@ function App() {
           <Route path='/welcome' element={<Welcome/>}/>
           <Route path='/home' element={<Home/>}/>
           <Route path='/bootcamps' element={<Bootcamps/>}/>
-
+          <Route path='/edit' element={<EditBootcamp/>}/>
         </Routes>
       </HashRouter>
     </>
